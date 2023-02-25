@@ -5,10 +5,10 @@ tasks:
     command: |
       conda init
       conda activate nextstrain
-      conda install nextstrain-cli \
-       -c conda-forge -c bioconda \
-       --strict-channel-priority \
-       --override-channels
+      mamba install nextstrain-cli \
+        -c conda-forge -c bioconda \
+        --strict-channel-priority \
+        --override-channels
       nextstrain setup conda
       nextstrain setup --set-default conda
 
