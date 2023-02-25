@@ -1,0 +1,184 @@
+# Define inputs.
+inputs:
+  - name: nextregions_africa
+    metadata: "data/hcov_africa.tar.gz"
+    aligned: "data/hcov_africa.tar.gz"
+  - name: gisaid_africa
+    metadata: "data/metadata_africa.tsv.xz"
+    aligned: "data/sequences_africa.fasta.xz"
+
+files:
+  auspice_config: "cames_profile/auspice_config_cames.json"
+  description: "cames_profile/description_cames.md"
+
+# Retain as many strains as possible to improve representation of all countries
+# in builds, at the expense of some phylogenetic accuracy.
+filter:
+  skip_diagnostics: true
+  min_length: 5000
+
+tree:
+  tree-builder-args: "'-ninit 10 -n 4 -czb'"
+
+# Add a prefix to auspice json files
+auspice_json_prefix: ncov-cames
+
+# Define builds.
+builds:
+  # Define regional builds.
+  central-africa:
+    title: SARS-CoV-2 analysis for Central Africa
+    subsampling_scheme: african_region
+    countries: "'Burundi', 'Cameroon', 'Central African Republic', 'Chad', 'Democratic Republic of the Congo', 'Equatorial Guinea', 'Gabon', 'Republic of the Congo'"
+  eastern-africa:
+    title: SARS-CoV-2 analysis for Eastern Africa
+    subsampling_scheme: african_region
+    countries: "'Djibouti', 'Ethiopia', 'Kenya', 'Madagascar', 'Mauritius', 'Rwanda', 'Seychelles', 'Somalia', 'South Sudan', 'Sudan', 'Uganda', 'Union of the Comoros'"
+  northern-africa:
+    title: SARS-CoV-2 analysis for Northern Africa
+    subsampling_scheme: african_region
+    countries: "'Algeria', 'Egypt', 'Libya', 'Morocco', 'Tunisia'"
+  southern-africa:
+    title: SARS-CoV-2 analysis for Southern Africa
+    subsampling_scheme: african_region
+    countries: "'Angola', 'Botswana', 'Eswatini', 'Lesotho', 'Malawi', 'Mozambique', 'Namibia', 'South Africa', 'Zambia', 'Zimbabwe'"
+  western-africa:
+    title: SARS-CoV-2 analysis for Western Africa
+    subsampling_scheme: african_region
+    countries: "'Benin', 'Burkina Faso', 'Cabo Verde', 'Cote d\\'Ivoire', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 'Liberia', 'Mali', 'Niger', 'Nigeria', 'Senegal', 'Sierra Leone', 'Togo'"
+  # Define institutional builds
+  CAMES:
+    title: SARS-CoV-2 analysis for CAMES countries
+    subsampling_scheme: african_int
+    countries: "'Benin', 'Burkina Faso', 'Burundi', 'Cameroon', 'Central African Republic', 'Republic of the Congo', 'Cote d\\'Ivoire', 'Gabon', 'Guinea', 'Guinea-Bissau', 'Equatorial Guinea', 'Madagascar', 'Mali', 'Niger', 'Democratic Republic of the Congo', 'Rwanda', 'Chad', 'Senegal', 'Togo'" 
+  # Define country-specific builds.
+  benin:
+    colors: cames_profile/colors/benin_colors.tsv
+    country: Benin
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Benin"
+  burkina-faso:
+    colors: cames_profile/colors/burkina-faso_colors.tsv
+    country: Burkina Faso
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Burkina Faso"
+  burundi:
+    colors: cames_profile/colors/burundi_colors.tsv
+    country: Burundi
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Burundi"
+  cameroon:
+    colors: cames_profile/colors/cameroon_colors.tsv
+    country: Cameroon
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Cameroon"
+  central-african-republic:
+    colors: cames_profile/colors/central-african-republic_colors.tsv
+    country: Central African Republic
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Central African Republic"
+  chad:
+    colors: cames_profile/colors/chad_colors.tsv
+    country: Chad
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Chad"
+  cote-divoire:
+    colors: cames_profile/colors/cote-divoire_colors.tsv
+    country: "Cote d\\'Ivoire"
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for C\xF4te d'Ivoire"
+  democratic-republic-of-the-congo:
+    colors: cames_profile/colors/democratic-republic-of-the-congo_colors.tsv
+    country: Democratic Republic of the Congo
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Democratic Republic of the Congo"
+  equatorial-guinea:
+    colors: cames_profile/colors/equatorial-guinea_colors.tsv
+    country: Equatorial Guinea
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Equatorial Guinea"
+  gabon:
+    colors: cames_profile/colors/gabon_colors.tsv
+    country: Gabon
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Gabon"
+  guinea:
+    colors: cames_profile/colors/guinea_colors.tsv
+    country: Guinea
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Guinea"
+  guinea-bissau:
+    colors: cames_profile/colors/guinea-bissau_colors.tsv
+    country: Guinea-Bissau
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Guinea-Bissau"
+  madagascar:
+    colors: cames_profile/colors/madagascar_colors.tsv
+    country: Madagascar
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Madagascar"
+  mali:
+    colors: cames_profile/colors/mali_colors.tsv
+    country: Mali
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Mali"
+  niger:
+    colors: cames_profile/colors/niger_colors.tsv
+    country: Niger
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Niger"
+  republic-of-the-congo:
+    colors: cames_profile/colors/republic-of-the-congo_colors.tsv
+    country: Republic of the Congo
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Republic of the Congo"
+  rwanda:
+    colors: cames_profile/colors/rwanda_colors.tsv
+    country: Rwanda
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Rwanda"
+  senegal:
+    colors: cames_profile/colors/senegal_colors.tsv
+    country: Senegal
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Senegal"
+  togo:
+    colors: cames_profile/colors/togo_colors.tsv
+    country: Togo
+    subsampling_scheme: african_country
+    title: "SARS-CoV-2 analysis for Togo"
+
+# Define subsampling for country, regional and institutional builds.
+subsampling:
+  african_country:
+    # Use GISAID Africa data to sample the given country.
+    focal:
+      max_sequences: 5000
+      query: --query "(gisaid_africa == 'yes') & (country == '{country}')"
+    # Use all contextual data from the nextregions input without any subsampling.
+    context:
+      max_sequences: 1000
+      query: --query "(nextregions_africa == 'yes') & (country != '{country}')"
+
+  african_region:
+    # Sample each region evenly by country, year, and month.
+    focal:
+      group_by: country year month
+      max_sequences: 5000
+      query: --query "(gisaid_africa == 'yes') & (country in [{countries}])"
+    # Use all contextual data from the nextregions input without any subsampling.
+    context:
+      max_sequences: 1000
+      query: --query "(nextregions_africa == 'yes') & (country not in [{countries}])"
+
+  african_int:
+    # Sample each institution evenly by country, year, and month.
+    focal:
+      group_by: country year month
+      max_sequences: 5000
+      query: --query "(gisaid_africa == 'yes') & (country in [{countries}])"
+    # Use all contextual data from the nextregions input without any subsampling.
+    context:
+      max_sequences: 1000
+      query: --query "(nextregions_africa == 'yes') & (country not in [{countries}])"
+
