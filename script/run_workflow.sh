@@ -2,8 +2,8 @@
 
 # Run the CAMES builds
 nextstrain build \
-    --cpus 4 \
-    --memory 8Gib \
+    --cpus 16 \
+    --memory 48Gib \
     . \
     --configfile builds_cames.yaml \
     --config active_builds=CAMES
