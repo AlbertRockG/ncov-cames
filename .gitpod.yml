@@ -18,3 +18,7 @@ vscode:
     - snakemake.snakemake-lang
     - ms-toolsai.jupyter
     - sndst00m.vscode-native-svg-preview
+    - ms-toolsai.jupyter-keymap
+    - ms-toolsai.jupyter-renderers
+    - ms-toolsai.vscode-jupyter-cell-tags
+    - ms-toolsai.vscode-jupyter-slideshow
