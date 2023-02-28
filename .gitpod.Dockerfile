@@ -1,9 +1,19 @@
-FROM snakemake/snakemake:stable
-RUN exit
-RUN conda init --all && \
-    conda activate && \
-    source /root/.bashrc;
-RUN mamba create -n nextstrain --clone snakemake; \
-    mamba env update -n nextstrain -f environment.yml;
-RUN mkdir -p /tmp/conda
-ENV CONDA_PKGS_DIRS /tmp/conda
+FROM mambaorg/micromamba:0.25.1
+
+LABEL image.author.name "AlbertRockG"
+LABEL image.author.email "rafgangbadja@gmail.com"
+
+
+RUN micromamba create -n nextstrain
+
+RUN micromamba install nextstrain-cli \
+               -c conda-forge \
+               -c bioconda \
+               --strict-channel-priority \
+               --override-channels
+
+RUN nextstrain setup conda
+
+RUN nextstrain setup --set-default conda
+
+ENV PATH /opt/conda/envs/nextstrain/bin:$PATH
