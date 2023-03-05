@@ -33,5 +33,5 @@ RUN mamba create -n nextstrain nextstrain-cli \
 
 ENV PATH /opt/conda/envs/nextstrain/bin:$PATH
 
-RUN nextstrain setup conda 
+RUN nextstrain setup conda \
     && nextstrain setup --set-default conda
