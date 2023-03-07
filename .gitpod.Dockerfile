@@ -5,9 +5,16 @@ LABEL image.author.email "rafgangbadja@gmail.com"
 
 USER root
 
+ENV TZ=UTC
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt-get -y update \
     && apt-get -y install \
     ca-certificates \
+    tzdata \
     git \
     curl \
     sudo \
