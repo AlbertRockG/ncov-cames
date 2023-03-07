@@ -18,5 +18,4 @@ xz -c -d data/metadata_africa.tsv.xz \
 
 # Get genomes for strain names from tarball.
 tar xOf data/sequences_fasta.tar.xz sequences.fasta \
-  | faSomeRecords /dev/stdin data/strains_africa.txt /dev/stdout \
-  | xz -c -2 > data/sequences_africa.fasta.xz
+  | seqkit grep -n -f data/strains_africa.txt | xz -c -2 > data/sequences_africa.fasta.xz

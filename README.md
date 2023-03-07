@@ -58,7 +58,7 @@ xz -c -d data/metadata_africa.tsv.xz \
 
 # Get genomes for strain names from tarball.
 tar xOf data/sequences_fasta.tar.xz sequences.fasta \
-  | faSomeRecords /dev/stdin data/strains_africa.txt /dev/stdout \
+  | seqkit grep -n -f data/strains_africa.txt /dev/stdout \
   | xz -c -2 > data/sequences_africa.fasta.xz
 ```
 
@@ -66,8 +66,7 @@ tar xOf data/sequences_fasta.tar.xz sequences.fasta \
 
 Navigate to the ncov workflow directory; these instructions assume this is a sibling directory to this repository. By defaul, the following command will run builds for all CAMES' countries, CAMES, and African's regions.
 
-```
-nextstrain build \
+```nextstrain build \
     --cpus 4 \
     --memory 8Gib \
     . \
