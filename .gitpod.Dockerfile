@@ -5,7 +5,14 @@ LABEL image.author.email "rafgangbadja@gmail.com"
 
 USER root
 
-RUN apt-get -y update && apt-get -y install git curl sudo gnupg
+RUN apt-get -y update \
+    && apt-get -y install \
+    ca-certificates \
+    git \
+    curl \
+    sudo \
+    gnupg \
+    lsb_release
 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
