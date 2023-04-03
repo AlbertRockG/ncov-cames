@@ -42,7 +42,7 @@ RUN curl -o /tmp/dive.deb -fsSL https://github.com/wagoodman/dive/releases/downl
     && apt install /tmp/dive.deb \
     && rm /tmp/dive.deb
 
-RUN mamba create -s sarscovafrica seqkit \
+RUN mamba create -n sarscovafrica seqkit \
     samtools \
     bcftools \
     minimap2 \
