@@ -48,7 +48,7 @@ RUN mamba create -s sarscovafrica seqkit \
     minimap2 \
     tsv-utils \
     -c conda-forge \
-    -c bioconda \
+    -c bioconda
 
 RUN mamba create -n nextstrain nextstrain-cli \
     -c conda-forge \
