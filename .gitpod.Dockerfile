@@ -17,6 +17,9 @@ RUN apt-get -y update \
     tzdata \
     git \
     curl \
+    tmux \
+    htop \
+    xz-utils \
     sudo \
     gnupg \
     lsb-release
@@ -38,6 +41,14 @@ RUN curl -o /usr/local/bin/docker-compose -fsSL https://github.com/docker/compos
 RUN curl -o /tmp/dive.deb -fsSL https://github.com/wagoodman/dive/releases/download/v0.10.0/dive_0.10.0_linux_amd64.deb \
     && apt install /tmp/dive.deb \
     && rm /tmp/dive.deb
+
+RUN mamba create -s sarscovafrica seqkit \
+    samtools \
+    bcftools \
+    minimap2 \
+    tsv-utils \
+    -c conda-forge \
+    -c bioconda \
 
 RUN mamba create -n nextstrain nextstrain-cli \
     -c conda-forge \
