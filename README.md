@@ -18,6 +18,33 @@ cd ncov
 cp -r ../ncov-cames/cames_profile .
 cp ../ncov-cames/builds_cames.yaml .
 ```
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/AlbertRockG/ncov-cames)
+
+# SARS-CoV-2 Build Definitions for African and Malagasy Council of Higher Education (CAMES)
+
+Welcome to the repository for the SARS-CoV-2 genomics epidemiology analysis conducted for the [Also-Covid-19 Project](https://www.lecames.org/prix-macky-sall-pour-la-recherche-du-cames-60-millions-de-francs-pour-une-equipe-pluridisciplinaire-travaillant-sur-les-differents-aspects-de-la-covid-19/) in collaboration with the African and Malagasy Council of Higher Education (CAMES).
+
+## Introduction
+
+This project aims to provide comprehensive build configurations for CAMES SARS-CoV-2, hosted at [Nextstrain Community Builds](https://nextstrain.org/community/AlbertRockG/ncov-cames). The analysis focuses on understanding the genomic epidemiology of SARS-CoV-2 in African and Malagasy regions.
+
+## Getting Started
+
+### Setup Environment
+
+Choose your preferred environment for running the analysis. Refer to the [Nextstrain documentation](https://docs.nextstrain.org/projects/cli/en/stable/) for installing the necessary packages.
+
+### Setup Repositories
+
+```bash
+git clone https://github.com/AlbertRockG/ncov-cames.git
+git clone https://github.com/nextstrain/ncov.git
+cd ncov
+cp -r ../ncov-cames/cames_profile .
+cp ../ncov-cames/builds_cames.yaml .
+
+```
+
 ### Download data
 
 Login to [GISAID (gisaid.com)](https://www.gisaid.org/) and select the "EpiCoV" link from the navigation.
@@ -81,3 +108,6 @@ To visualize your builds, follow the tutorial under [this link](https://docs.nex
 ```
 nextstrain view auspice
 ```
+## Acknowledgments
+
+A heartfelt thank you to the [PTR-SANTE CAMES](https://www.linkedin.com/in/ptr-sante-cames-25b140203/?originalSubdomain=bj) Board and [Dr Luc Salako Djogbenou](https://www.linkedin.com/in/luc-djogb%C3%A9nou-088999124/) for their unwavering support and valuable contributions to this initiative.
