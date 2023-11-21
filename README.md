@@ -66,7 +66,8 @@ tar xOf data/sequences_fasta.tar.xz sequences.fasta \
 
 Navigate to the ncov workflow directory; these instructions assume this is a sibling directory to this repository. By defaul, the following command will run builds for all CAMES' countries, CAMES, and African's regions.
 
-```nextstrain build \
+```
+nextstrain build \
     --cpus 4 \
     --memory 8Gib \
     . \
