@@ -1,9 +1,8 @@
-script/.RData
-script/.Rhistory
-script/Fig1.pdf
-script/Rplot1.pdf
-script/benin_waves.R
-script/benin_waves.py
-script/benin_waves_and_clades.R
+bin/Fig1.pdf
+bin/Rplot1.pdf
+bin/benin_waves.R
+bin/benin_waves.py
+bin/benin_waves_and_clades.R
 data/metadata_africa.tsv
 data/owid-covid-data.csv
+./community-datasets.yaml
